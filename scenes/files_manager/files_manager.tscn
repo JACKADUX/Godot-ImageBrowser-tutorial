@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bctsdkmhv7dfx"]
+
+[ext_resource type="Script" path="res://scenes/files_manager/files_manager.gd" id="1_ydhtv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82hk0"]
+load_path = "res://.godot/imported/folder.svg-b35c08c026a82a9fcde296a25dbc63ca.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3r0g8"]
+
+[node name="FilesManager" type="PanelContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_ydhtv")
+ICON_FOLDER = SubResource("CompressedTexture2D_82hk0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/draw_guides = 0
+theme_override_constants/icon_max_width = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3r0g8")

@@ -1,0 +1,14 @@
+config_version=5
+
+[application]
+
+config/name="Image Browser"
+run/main_scene="res://scenes/application.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
+config/icon="res://icon.svg"
+config/tags=PackedStringArray("软件开发系列教程")
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720

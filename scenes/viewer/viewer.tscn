@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca5tjcyg0qmbv"]
+
+[ext_resource type="Script" path="res://scenes/viewer/viewer.gd" id="1_14jgh"]
+[ext_resource type="PackedScene" uid="uid://cr6q832h0n455" path="res://scenes/viewer/base_panel.tscn" id="2_dr25j"]
+
+[node name="Viewer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+script = ExtResource("1_14jgh")
+PACK_BASE_PANEL = ExtResource("2_dr25j")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HFC_Main" type="HFlowContainer" parent="MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BasePanel" parent="MarginContainer/ScrollContainer/HFC_Main" instance=ExtResource("2_dr25j")]
+layout_mode = 2

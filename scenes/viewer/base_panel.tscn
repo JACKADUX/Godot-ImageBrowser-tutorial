@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr6q832h0n455"]
+
+[ext_resource type="Script" path="res://scenes/viewer/base_panel.gd" id="1_legen"]
+[ext_resource type="Texture2D" uid="uid://dikp3u76ckwcf" path="res://resource/icons/image_4x.png" id="2_q2nc4"]
+
+[node name="BasePanel" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 160)
+script = ExtResource("1_legen")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TR_MainImage" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_q2nc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DefualtTexture" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/DefualtTexture"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_q2nc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Title"
+vertical_alignment = 1
+clip_text = true
