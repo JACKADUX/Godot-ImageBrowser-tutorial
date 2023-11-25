@@ -31,6 +31,7 @@ func create_tree_from_dir(parent:TreeItem, directory:String)-> void:
 	var dir := DirAccess.open(directory)
 	for sub_dir in dir.get_directories():
 		var sub_tree_item := tree.create_item(parent) as TreeItem
+		sub_tree_item.collapsed = true
 		sub_tree_item.set_icon(0, ICON_FOLDER)
 		sub_tree_item.set_text(0, sub_dir)
 		
