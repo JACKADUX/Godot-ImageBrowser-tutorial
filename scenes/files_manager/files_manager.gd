@@ -20,6 +20,10 @@ func _ready():
 	file_path = "G:/灵感"
 	tree.item_selected.connect(_on_item_selected)
 
+func set_file_path(value:String):
+	assert(DirAccess.dir_exists_absolute(value), "file path must exists!")
+	file_path = value
+		
 func init_file_path():
 	tree.clear()
 	root = tree.create_item()

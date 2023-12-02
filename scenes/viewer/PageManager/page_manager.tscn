@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgamx3h4inhuc"]
+
+[ext_resource type="Script" path="res://scenes/viewer/PageManager/page_manager.gd" id="1_1uiji"]
+[ext_resource type="Texture2D" uid="uid://b8nbxlb2t61io" path="res://resource/icons/arrow_left.svg" id="2_k7t1k"]
+[ext_resource type="Texture2D" uid="uid://d0boikvj4xdyx" path="res://resource/icons/arrow_right.svg" id="3_72gw7"]
+
+[node name="PageManager" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+script = ExtResource("1_1uiji")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnPrev" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("2_k7t1k")
+
+[node name="LabelInfo" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "1/1"
+horizontal_alignment = 1
+
+[node name="BtnNext" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("3_72gw7")

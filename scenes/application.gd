@@ -1,14 +1,15 @@
 extends Control
 
+@onready var menu_bar_panel = %MenuBarPanel
 @onready var files_manager = %FilesManager
 @onready var viewer = %Viewer
 
 var image_extensions = ["png", "jpg", "tiff", "svg"]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	menu_bar_panel.folder_selected.connect(files_manager.set_file_path)
 	files_manager.directory_changed.connect(_on_directory_changed)
-
-
+	
 func _on_directory_changed():
 	var files = files_manager.get_current_directory_files()
 	var images = filter_images(files)

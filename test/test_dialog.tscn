@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://svxoydxjx54e"]
+
+[ext_resource type="Script" path="res://test/test_dialog.gd" id="1_xt1hp"]
+
+[node name="TestDialog" type="Node2D"]
+position = Vector2(0, 3)
+script = ExtResource("1_xt1hp")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 586.0
+offset_top = 297.0
+offset_right = 636.0
+offset_bottom = 328.0
+text = "Open"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

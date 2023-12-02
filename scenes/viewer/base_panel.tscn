@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr6q832h0n455"]
+[gd_scene load_steps=7 format=3 uid="uid://cr6q832h0n455"]
 
 [ext_resource type="Script" path="res://scenes/viewer/base_panel.gd" id="1_legen"]
 [ext_resource type="Texture2D" uid="uid://dikp3u76ckwcf" path="res://resource/icons/image_4x.png" id="2_q2nc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnl6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeva5"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l61vq"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 0.329412)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ospok"]
 
 [node name="BasePanel" type="PanelContainer"]
 custom_minimum_size = Vector2(120, 160)
@@ -49,3 +63,10 @@ layout_mode = 2
 text = "Title"
 vertical_alignment = 1
 clip_text = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnl6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jeva5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l61vq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ospok")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://nidh05241osq"]
+
+[ext_resource type="Script" path="res://scenes/menu_bar_panel/menu_bar_panel.gd" id="1_rdejn"]
+
+[node name="MenuBarPanel" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+script = ExtResource("1_rdejn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="File" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+unique_name_in_owner = true
+
+[node name="Edit" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+unique_name_in_owner = true
+
+[node name="Help" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+unique_name_in_owner = true

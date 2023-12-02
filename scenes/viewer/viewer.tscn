@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca5tjcyg0qmbv"]
+[gd_scene load_steps=5 format=3 uid="uid://ca5tjcyg0qmbv"]
 
 [ext_resource type="Script" path="res://scenes/viewer/viewer.gd" id="1_14jgh"]
 [ext_resource type="PackedScene" uid="uid://cr6q832h0n455" path="res://scenes/viewer/base_panel.tscn" id="2_dr25j"]
+[ext_resource type="PackedScene" uid="uid://bgamx3h4inhuc" path="res://scenes/viewer/PageManager/page_manager.tscn" id="3_6scpr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8i01j"]
+font_size = 12
+font_color = Color(0.439216, 0.439216, 0.439216, 1)
 
 [node name="Viewer" type="PanelContainer"]
 anchors_preset = 15
@@ -15,21 +20,44 @@ size_flags_stretch_ratio = 5.0
 script = ExtResource("1_14jgh")
 PACK_BASE_PANEL = ExtResource("2_dr25j")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="HFC_Main" type="HFlowContainer" parent="MarginContainer/ScrollContainer"]
+[node name="HFC_Main" type="HFlowContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BasePanel" parent="MarginContainer/ScrollContainer/HFC_Main" instance=ExtResource("2_dr25j")]
+[node name="BasePanel" parent="VBoxContainer/MarginContainer/ScrollContainer/HFC_Main" instance=ExtResource("2_dr25j")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="LabelInfo" type="Label" parent="VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "info:"
+label_settings = SubResource("LabelSettings_8i01j")
+
+[node name="PageManager" parent="VBoxContainer" instance=ExtResource("3_6scpr")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
